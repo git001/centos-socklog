@@ -8,10 +8,12 @@ RUN set -x \
   && tar xfvz socklog-2.1.0.tar.gz \
   && rm socklog-2.1.0.tar.gz \
   && cd admin/socklog-2.1.0 \
-  && package/install \
-  && yum -y autoremove gunzip tar \
-  && yum -y groupremove 'Development Tools' \
-  && yum -y clean all
+  && package/install
+# Error: Trying to remove "systemd", which is protected
+# as soon as this issue is solved we can cleanup the below
+#  && yum -y autoremove gunzip tar \
+#  && yum -y groupremove 'Development Tools' \
+#  && yum -y clean all
 
 ENV SYSLOG_PORT=8514
 COPY run-socklog.sh /
