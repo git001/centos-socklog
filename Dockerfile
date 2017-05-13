@@ -1,7 +1,7 @@
 FROM centos:latest
 
 RUN set -x \
-  && yum -y install socat gunzip tar \
+  && yum -y install socat gunzip tar systemd \
   && yum -y groupinstall 'Development Tools' \
   && mkdir /package && cd /package \
   && curl -sSO http://smarden.org/socklog/socklog-2.1.0.tar.gz \
