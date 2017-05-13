@@ -17,6 +17,7 @@ ENV SYSLOG_PORT=8514
 COPY run-socklog.sh /
 RUN chmod 755 /run-socklog.sh
 EXPOSE 8514/udp
-USER default
+
+#USER default
 
 ENTRYPOINT ["/run-socklog.sh"]
