@@ -1,4 +1,4 @@
-FROM centos7:latest
+FROM centos:latest
 
 RUN set -x \
   && yum -y install socat gunzip tar \
